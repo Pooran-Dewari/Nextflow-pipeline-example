@@ -116,3 +116,5 @@ Briefly, you need to install Singularity on your device and then search for the 
 # singularity build <name of the sif> <link to existing image on docker>
 singularity build bedtools.sif docker://staphb/bedtools
 ```
+#### Running the pipeline
+See at the top of this page for instructions on how to run the pipeline using the bedtools.sif container we built just now.
