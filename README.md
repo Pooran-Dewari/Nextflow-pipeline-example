@@ -7,7 +7,20 @@
 #### tldr; how to run this pipeline
 Clone the directory, then move to Nextflow_example directory and run the command below (provided you have singularity installed)
 ```
+# may need to make nextflow executable using chmod
+chmod 755 nextflow
+
+# now run the pipeline
 ./nextflow run bam_to_bed.nf -with-singularity  bedtools.sif
+
+# simplified direcotry structure of results/ after the run
+results/
+├── beds
+│   ├── H3K27ac.bam.bed 
+│   └── Input.bam.bed
+└── filtered_beds
+    ├── H3K27ac.bam.bed.filtered.bed
+    └── Input.bam.bed.filtered.bed
 ```
 ---
 
