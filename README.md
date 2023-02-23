@@ -83,9 +83,9 @@ There are two main things to look into the nextflow file above
  - workflow: A workflow block contains information about which processes will be run, it also has instructions in parentheses for input file. This one may seem a bit tricky but lets have a look at workflow above. In the beginning of the block, it tells the programme where to look for the input files (using info from params.input). Same way it tells the location of blacklist file, via another params. Then the execution of processes is catalogued. First, BAM_TO_BED process will be executed, the inputs for this are defined inside the parentheses (input_ch). And next, FILTER_BLACKLIST is executed, this one takes two types of input files: output of BAM_TO_BED, and a blacklist file. 
  
  
- #### How to create Singularity container with custom tools in it (bedtools)
+ #### How to create Singularity image/container (with custom tools installed inside it, e.g. bedtools for this project)
  
- I was really tempted to use Docker, but annoyingly Eddie doesn't support Docker. So singularity is the option, but need to create container/image first with bedtools suite of tools.
+ I was really tempted to use Docker, but annoyingly Eddie doesn't support Docker. So singularity is the option, but need to first create container/image  with bedtools suite of tools.
 - Installing singularity (on my laptop) using this: https://github.com/sylabs/singularity/blob/main/INSTALL.md
 - Gentle intro to singularity container here: https://singularity-tutorial.github.io/02-basic-usage/
 - I created container/image on my laptop and then scp them to Eddie to use cross-platform.
