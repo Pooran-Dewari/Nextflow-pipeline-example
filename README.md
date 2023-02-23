@@ -1,18 +1,25 @@
 # Nextflow-pipeline-example
 
-#### Introduction to build a basic nextflow pipeline using your own singularity container
+#### Introduction to build a basic nextflow pipeline and run using your custom made singularity container
 
 ---
 
 #### tldr; how to run this pipeline
-Clone the directory, then move to Nextflow_example directory and run the command below (provided you have singularity installed)
+Type the commands below to run this pipeline (provided you have singularity installed! If not, follow this to install singularity https://github.com/sylabs/singularity/blob/main/INSTALL.md)
 ```
-# may need to make nextflow executable using chmod
+# Clone the directory, it has test data included for a quick pilot run
+git clone https://github.com/Pooran-Dewari/Nextflow-pipeline-example.git
+
+# move to Nextflow_example directory
+cd Nextflow-pipeline-example/Nextflow_example/
+
+# you may need to make nextflow executable using chmod
 chmod 755 nextflow
 
 # now run the pipeline
 ./nextflow run bam_to_bed.nf -with-singularity  bedtools.sif
 
+# should take only a couple of seconds to finish the run with the test data
 # simplified direcotry structure of results/ after the run
 results/
 ├── beds
