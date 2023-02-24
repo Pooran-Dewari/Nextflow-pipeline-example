@@ -99,7 +99,7 @@ workflow {
 ```
 There are two main things to look into the nextflow file above
 
- - process: A process is a task that you want to achieve. For example, bam to bed conversion is a process. Obvious but just want to mention each process has information about the inputs, outputs,and the script (command) that takes in input files and generates output files.
+ - process: A process is a task that you want to achieve. For example, bam to bed conversion is a process. Obvious but just want to mention each process has information about the inputs, outputs,and the script (command) that takes in input files and generates output files. See more examples [here](https://github.com/nextflow-io/patterns).
  - workflow: A workflow block contains information about which processes will be run, it also has instructions in parentheses for input file. This one may seem a bit tricky but lets have a look at workflow above. In the beginning of the block, it tells the programme where to look for the input files (using info from params.input). Same way it tells the location of blacklist file, via another params. Then the execution of processes is catalogued. First, BAM_TO_BED process will be executed, the inputs for this are defined inside the parentheses (input_ch). And next, FILTER_BLACKLIST is executed, this one takes two types of input files: output of BAM_TO_BED, and a blacklist file. 
  
  
